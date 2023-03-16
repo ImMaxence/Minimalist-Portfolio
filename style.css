@@ -8,9 +8,11 @@
 }
 
 body {
-    background-color: #0F0F0F;
+    background-color: orange;
     width: auto;
     height: auto;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -22,8 +24,10 @@ body::-webkit-scrollbar {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background-color: #0F0F0F;
+    background-color: orange;
     display: flex;
+    justify-content: center;
+
 }
 
 
@@ -41,7 +45,7 @@ body::-webkit-scrollbar {
 }
 
 #blob {
-    width: 300px;
+    width: 200px;
     aspect-ratio: 1;
     left: 50%;
     top: 50%;
@@ -49,10 +53,10 @@ body::-webkit-scrollbar {
     position: fixed;
     border-radius: 50%;
     background: linear-gradient(to right,
-            aquamarine, mediumpurple);
+            white, black);
     filter: blur(30px);
     animation: rotate 10s linear infinite;
-    z-index: 4;
+    z-index: 1;
 }
 
 @keyframes rotate {
@@ -127,7 +131,7 @@ body::-webkit-scrollbar {
     width: 100vw;
     height: auto;
     overflow: hidden;
-    background-color: #0F0F0F;
+    background-color: orange;
 }
 
 .me {
@@ -199,6 +203,7 @@ body::-webkit-scrollbar {
 .wrapper {
     position: relative;
     min-height: 100vh;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,32 +212,33 @@ body::-webkit-scrollbar {
 }
 
 .wrapper .container {
-    width: 30%;
+    width: 50%;
     overflow: hidden;
 }
 
 .img {
     position: relative;
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width: 400px;
     border-radius: 50%;
-    background-color: orange;
+    border: 5px solid #292929;
     z-index: 10;
 }
 
 .img_me {
     position: relative;
-    width: 100vw;
-    height: 100vh;
-    background-color: red;
-    z-index: 1045;
+    width: 50%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper .container .text {
     position: relative;
     color: orange;
     font-weight: 500;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 .wrapper .container .text.firts_text {
@@ -251,6 +257,7 @@ body::-webkit-scrollbar {
     background-color: black;
     border-left: 2px solid white;
     animation: animate 4s steps(12) infinite;
+    z-index: 5;
 }
 
 @keyframes animate {
@@ -263,4 +270,93 @@ body::-webkit-scrollbar {
     100% {
         left: 0%;
     }
+}
+
+#image_of_me {
+    border-radius: 50%;
+    width: 390px;
+}
+
+.transpa {
+    background-color: transparent;
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.content {
+    position: relative;
+    height: 20vh;
+    text-align: center;
+    background-color: white;
+}
+
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+.left {
+    width: 35%;
+    height: 100%;
+    background-color: violet;
+}
+
+.slide {
+    width: 55%;
+    height: 100%;
+    background-color: blue;
+}
+
+.three {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 10;
+    margin-top: 10%;
+}
+
+.nontranspa {
+    background-color: #292929;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }

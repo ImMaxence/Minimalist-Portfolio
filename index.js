@@ -3,6 +3,9 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const blob = document.getElementById('blob');
 const second = document.getElementById('second');
 const text = document.querySelector('.sec_text');
+const container = document.getElementById('container_parralax');
+const container_image = document.getElementById('container_image_parralax');
+const three = document.getElementById('three');
 
 const text_load = () => {
     setTimeout(() => {
@@ -33,7 +36,10 @@ document.body.onpointermove = event => {
 
 window.addEventListener("scroll", function () {
     let value = window.scrollY;
-    second.style.top = -value * 1 + "px";
+    second.style.top = -value * 0.6 + "px";
+    container.style.left = -value * 1.2 + "px";
+    container_image.style.left = value * 1.2 + "px";
+    three.style.top = -value * 0.6 + "px";
 });
 
 simple.onmouseover = event => {
